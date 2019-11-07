@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ihrm-company #指定服务名
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.102.41.128:3306/ihrm?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  jpa:
+   database: MySQL
+   show-sql: true
+   open-in-view: true
+server:
+  port: 9001
