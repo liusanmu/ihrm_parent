@@ -1,4 +1,4 @@
-package com.ihrm.company;
+package com.ihrm.company.controller;
 
 import com.ihrm.common.entity.Result;
 import com.ihrm.common.entity.ResultCode;
@@ -17,6 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/company")
+@CrossOrigin
 public class CompanyController {
 
     @Resource
@@ -57,12 +58,12 @@ public class CompanyController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Result findById(@PathVariable(name = "id") String id) throws Exception {
         Company company = companyService.findById(id);
-        return new Result(ResultCode.SUCCESS);
+        return new Result(ResultCode.SUCCESS, company);
     }
     /**
      * 获取企业列表
      */
-    @RequestMapping(value = "findAll", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public Result findAll() throws Exception {
         List<Company> companyList = companyService.findAll();
         return new Result(ResultCode.SUCCESS, companyList);
